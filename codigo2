@@ -1,0 +1,30 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    string binario;
+    int decimal = 0;
+
+    cout << "Ingrese un numero binario: ";
+    cin >> binario;
+
+    // Recorremos el string de izquierda a derecha
+    for (int i = 0; i < binario.length(); i++) {
+        // Convertimos el carácter '0' o '1' a número
+        int bit = binario[i] - '0';
+
+        // Validamos que sea binario
+        if (bit != 0 && bit != 1) {
+            cout << "Error: el numero no es binario." << endl;
+            return 0;
+        }
+
+        // Fórmula: decimal = decimal * 2 + bit
+        decimal = decimal * 2 + bit;
+    }
+
+    cout << "El valor decimal es: " << decimal << endl;
+
+    return 0;
+}
